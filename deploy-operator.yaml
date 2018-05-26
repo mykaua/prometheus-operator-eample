@@ -2,18 +2,18 @@ apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
   labels:
-    operator: prometheus
+    k8s-app: prometheus-operator
   name: prometheus-operator
   namespace: monitoring
 spec:
   replicas: 1
   selector:
     matchLabels:
-      operator: prometheus
+      k8s-app: prometheus-operator
   template:
     metadata:
       labels:
-        operator: prometheus
+        k8s-app: prometheus-operator
     spec:
       containers:
       - args:
